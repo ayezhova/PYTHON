@@ -1,21 +1,20 @@
-class StackNode:
+class QueueNode:
     def __init__(self, Data=None, Next=None):
         self.Data = Data
         self.Next = Next
 
 
-class Stack:
+class Queue:
     head = None
     tail = None
 
     def push(self, item):
-        if self.head is None:
-            self.head = StackNode(item)
+        if self.tail is None:
+            self.head = QueueNode(item)
             self.tail = self.head
         else:
-            newNode = StackNode(item)
-            newNode.next = self.head
-            self.head = newNode
+            self.tail.Next = QueueNode(item)
+            self.tail = self.tail.Next
 
     def pop(self):
         if self.tail is None:
@@ -36,4 +35,3 @@ class Stack:
 
     def isEmpty(self):
         return self.head is None
-

@@ -1,18 +1,18 @@
 from Graphs.Graph import GraphNode, Graph
-from Stack_Implementation.stack import Stack
+from QueueImplementation.queue import Queue
 
 
 def BFSRouteSearch(startNode, endNode):
-    stack = Stack()
-    stack.push(startNode)
-    while not stack.isEmpty():
-        node = stack.pop()
+    queue = Queue()
+    queue.push(startNode)
+    while not queue.isEmpty():
+        node = queue.pop()
         node.visited = True
         if node == endNode:
             return True
         for nodeNeighbor in node.neighbors:
             if not nodeNeighbor.visited:
-                stack.push(nodeNeighbor)
+                queue.push(nodeNeighbor)
     return False
 
 
