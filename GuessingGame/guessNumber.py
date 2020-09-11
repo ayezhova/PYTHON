@@ -1,4 +1,5 @@
 from General_Functions.colorPrint import colorPrint, colorString, Colors
+from General_Functions.getUserInput import getUserInput
 import random
 
 MIN = 1
@@ -6,15 +7,6 @@ MAX = 10
 GUESSES = 3
 
 STRING_RANGE = colorString(MIN, Colors.LIGHT_BLUE) + " and " + colorString(MAX, Colors.LIGHT_BLUE)
-
-
-def getUserInput(userPrompt):
-    try:
-        userInput = input(userPrompt)
-    except EOFError:
-        userInput = None
-    return userInput
-
 
 playing = True
 
